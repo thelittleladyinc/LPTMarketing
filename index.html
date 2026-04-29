@@ -35,9 +35,9 @@
       <a class="card" href="#powerpack-form" data-modal-target="powerPackFormModal" data-pack="Classic" data-pack-image="images/Power-Pack.png">
         <div class="card-thumb"><img src="images/Power-Pack.png" alt="Classic Power Pack"></div>
         <div class="card-body">
-          <h4>Classic Power Pack</h4>
-          <span class="price">$99</span>
-          <p>Stand out from the competition with over 150 print pieces — full-color sign rider, flyers, door hangers, and more.</p>
+          <h4>Classic Power Pack <span class="tag tag-orange">Free with Every Listing</span></h4>
+          <span class="price">FREE — just pay shipping</span>
+          <p><strong>Every active listing gets the Classic Power Pack free</strong> — agents only pay shipping. Stand out with over 150 print pieces: full-color sign rider, flyers, door hangers, and more.</p>
           <div class="breakdown-title">What's Included</div>
           <ul class="breakdown">
             <li><strong>24</strong> · Large Flyers (8.5×11)</li>
@@ -99,12 +99,24 @@
         <div class="card-body">
           <h4>Digital Marketing <span class="tag tag-orange">Configure</span></h4>
           <span class="price">From $99</span>
-          <p>Targeted online ads on top websites — reach buyers actively searching for your listing. Click to choose between <strong>Digital Ads</strong> (just listed) and <strong>Open House Digital Ads</strong>.</p>
-          <div class="breakdown-title">Two Types Available</div>
+          <p>Targeted online ads that improve your listing's exposure and build property recognition through repetition. Click to choose <strong>Just Listed</strong> or <strong>Open House</strong> digital ads.</p>
+          <div class="breakdown-title">Just Listed Digital Ads — $99</div>
           <ul class="breakdown">
-            <li><strong>Digital Ads</strong> — $99 — Complete online campaign for your active listing</li>
-            <li><strong>Open House Digital Ads</strong> — from $99 — Drive event attendance with date/time-aware creatives</li>
+            <li>4 property-specific digital ads</li>
+            <li>2 weeks of geo-targeting within a 20-mile radius</li>
+            <li>Minimum 15,000 impressions</li>
+            <li>Customized marketing plan with infographic report</li>
+            <li>Minimum 75 clicks</li>
           </ul>
+          <div class="breakdown-title">Open House Digital Ads — from $99</div>
+          <ul class="breakdown">
+            <li>4 property-specific digital ads</li>
+            <li>Custom duration of geo-targeting within a 20-mile radius</li>
+            <li>Up to 24,000 impressions</li>
+            <li>Customized marketing plan with infographic report</li>
+            <li>Up to 60 clicks</li>
+          </ul>
+          <p class="form-hint" style="margin-top:8px;"><em>*Targets non-real-estate websites — designed for visibility, not lead capture.</em></p>
         </div>
       </a>
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Waterfront%20Package&body=I%20would%20like%20to%20order%20the%20Waterfront%20marketing%20package.%20Please%20contact%20me%20to%20get%20started.">
@@ -728,18 +740,27 @@
       <form id="digitalForm" novalidate>
         <div class="form-section-title">Campaign Type</div>
         <div class="form-row radio-row">
-          <label><input type="radio" name="digitalType" value="Digital Ads" checked> <strong>Digital Ads — $99</strong>
-            <span class="form-hint">Complete online marketing campaign that targets buyers near your active listing across top websites.</span>
+          <label><input type="radio" name="digitalType" value="Just Listed Digital Ads" checked> <strong>Just Listed Digital Ads — $99</strong>
+            <span class="form-hint">Improves listing exposure and builds property recognition through repetition. Targets non-real-estate websites.</span>
           </label>
           <label><input type="radio" name="digitalType" value="Open House Digital Ads"> <strong>Open House Digital Ads — from $99</strong>
-            <span class="form-hint">Drive open-house attendance with creatives that include your event date and time.</span>
+            <span class="form-hint">Enhances listing presentation and boosts open-house attendance. Targets non-real-estate websites.</span>
           </label>
+        </div>
+
+        <div class="form-info-box" data-show-when="digitalType=Just Listed Digital Ads">
+          <strong>Just Listed Digital Ads — what's included</strong>
+          <p class="form-hint">• 4 property-specific digital ads<br>• 2 weeks of geo-targeting within a 20-mile radius<br>• Minimum 15,000 impressions<br>• Customized marketing plan with infographic report<br>• Minimum 75 clicks<br><em>*Not designed for capturing leads — targets non-real-estate websites.</em></p>
+        </div>
+        <div class="form-info-box" data-show-when="digitalType=Open House Digital Ads">
+          <strong>Open House Digital Ads — what's included</strong>
+          <p class="form-hint">• 4 property-specific digital ads<br>• Custom duration of geo-targeting within a 20-mile radius<br>• Up to 24,000 impressions<br>• Customized marketing plan with infographic report<br>• Up to 60 clicks<br><em>*Not designed for capturing leads — targets non-real-estate websites.</em></p>
         </div>
 
         <div class="form-section-title">Agent Info</div>
         <div class="form-row">
           <label for="dm-agentName">Agent Name</label>
-          <input id="dm-agentName" name="agentName" type="text" placeholder="Your full name">
+          <input id="dm-agentName" name="agentName" type="text" placeholder="Your full name" required>
         </div>
         <div class="form-row">
           <label for="dm-agentPhone">Phone Number</label>
@@ -752,19 +773,42 @@
 
         <div class="form-section-title">Listing Info</div>
         <div class="form-row">
-          <label for="dm-address">Property Address</label>
-          <input id="dm-address" name="address" type="text" placeholder="123 Main St, City, State ZIP">
+          <label for="dm-address">Property Address <span class="form-hint" style="color:#c0392b;float:right;">required</span></label>
+          <input id="dm-address" name="address" type="text" placeholder="123 Main St, City, State ZIP" required>
         </div>
+
+        <div class="form-section-title" data-show-when="digitalType=Open House Digital Ads">Open House Day / Time</div>
         <div class="form-row" data-show-when="digitalType=Open House Digital Ads">
-          <label for="dm-openHouseDate">Open House Date / Time</label>
-          <input id="dm-openHouseDate" name="openHouseDate" type="text" placeholder="Saturday May 4, 1–3pm">
+          <label for="dm-openHouseDate">Date</label>
+          <input id="dm-openHouseDate" name="openHouseDate" type="date">
+        </div>
+        <div class="form-row form-row-split" data-show-when="digitalType=Open House Digital Ads">
+          <div>
+            <label for="dm-startTime">Start Time</label>
+            <select id="dm-startTime" name="startTime">
+              <option value="">Select…</option>
+              <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+              <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+              <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
+            </select>
+          </div>
+          <div>
+            <label for="dm-endTime">End Time</label>
+            <select id="dm-endTime" name="endTime">
+              <option value="">Select…</option>
+              <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+              <option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option>
+              <option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option>
+            </select>
+          </div>
         </div>
         <div class="form-row" data-show-when="digitalType=Open House Digital Ads">
           <label for="dm-duration">Campaign Duration</label>
-          <select id="dm-duration" name="duration">
-            <option value="3 Days">3 Days — $99</option>
-            <option value="6 Days">6 Days — $189</option>
-            <option value="9 Days">9 Days — $279</option>
+          <select id="dm-duration" name="duration" data-base>
+            <option value="3 Days" data-base="99">3 Days for $99 USD ($33 per day)</option>
+            <option value="6 Days" data-base="198" selected>6 Days for $198 USD ($33 per day)</option>
+            <option value="9 Days" data-base="297">9 Days for $297 USD ($33 per day)</option>
+            <option value="14 Days" data-base="462">14 Days for $462 USD ($33 per day)</option>
           </select>
         </div>
 
@@ -772,6 +816,11 @@
         <div class="form-info-box">
           <strong>📎 Attach your headshot to the order email.</strong>
           <p class="form-hint">When your email app opens after Submit, attach the headshot you'd like used in the digital creatives.</p>
+        </div>
+
+        <div class="form-total">
+          <span>Estimated Total</span>
+          <span id="digitalTotal">$99.00</span>
         </div>
 
         <button type="submit" class="modal-btn">Submit Order via Email</button>
@@ -796,10 +845,14 @@
         <div class="form-row">
           <label for="pp-pack">Power Pack</label>
           <select id="pp-pack" name="packType">
-            <option value="Classic" data-image="images/Power-Pack.png">Classic Power Pack — $99</option>
-            <option value="Express" data-image="images/Express.png">Express Power Pack — $99</option>
-            <option value="Prospecting" data-image="images/Prospecting.png">Prospecting Power Pack — $99</option>
+            <option value="Classic" data-image="images/Power-Pack.png" data-base="0">Classic Power Pack — FREE (just pay shipping)</option>
+            <option value="Express" data-image="images/Express.png" data-base="99">Express Power Pack — $99</option>
+            <option value="Prospecting" data-image="images/Prospecting.png" data-base="99">Prospecting Power Pack — $99</option>
           </select>
+        </div>
+        <div class="form-info-box" data-pack-only="Classic">
+          <strong>🎁 Classic Power Pack is FREE with every active listing.</strong>
+          <p class="form-hint">Agent only pays shipping. Available with every listing — no per-pack charge.</p>
         </div>
 
         <div class="form-section-title">Agent Info</div>
@@ -822,8 +875,8 @@
 
         <div class="form-section-title">Listing Info</div>
         <div class="form-row">
-          <label for="pp-address">Property Address</label>
-          <input id="pp-address" name="address" type="text" placeholder="123 Main St, City, State ZIP">
+          <label for="pp-address">Property Address <span class="form-hint" style="color:#c0392b;float:right;">required</span></label>
+          <input id="pp-address" name="address" type="text" placeholder="123 Main St, City, State ZIP" required>
         </div>
         <div class="form-row" data-pack-only="Express">
           <label>Express Option (choose one)</label>
@@ -859,6 +912,49 @@
         <div class="form-row" data-show-when="headlineType=Custom">
           <label for="pp-customTagline">Custom Tagline <span class="char-count" data-counter-for="pp-customTagline">0/90</span></label>
           <input id="pp-customTagline" name="customTagline" type="text" maxlength="90" placeholder="e.g. Little Lady, BIG Marketing">
+        </div>
+
+        <div class="form-section-title">Color Theme</div>
+        <div class="form-row">
+          <label>Pick one of the 9 color combinations</label>
+          <div class="color-swatches">
+            <label class="color-swatch" style="--c1:#A8A8A8;--c2:#1E1E1E;" title="Silver / Black">
+              <input type="radio" name="colorTheme" value="Silver / Black" checked>
+              <span class="swatch-name">Silver / Black</span>
+            </label>
+            <label class="color-swatch" style="--c1:#7A2230;--c2:#1A1A1A;" title="Burgundy / Black">
+              <input type="radio" name="colorTheme" value="Burgundy / Black">
+              <span class="swatch-name">Burgundy</span>
+            </label>
+            <label class="color-swatch" style="--c1:#1E3A5F;--c2:#3D2640;" title="Navy / Plum">
+              <input type="radio" name="colorTheme" value="Navy / Plum">
+              <span class="swatch-name">Navy</span>
+            </label>
+            <label class="color-swatch" style="--c1:#9C9080;--c2:#3D6E6B;" title="Khaki / Teal">
+              <input type="radio" name="colorTheme" value="Khaki / Teal">
+              <span class="swatch-name">Khaki</span>
+            </label>
+            <label class="color-swatch" style="--c1:#2A2D32;--c2:#7A8033;" title="Charcoal / Olive">
+              <input type="radio" name="colorTheme" value="Charcoal / Olive">
+              <span class="swatch-name">Charcoal</span>
+            </label>
+            <label class="color-swatch" style="--c1:#1A1A1A;--c2:#1E5F8B;" title="Black / Steel Blue">
+              <input type="radio" name="colorTheme" value="Black / Steel Blue">
+              <span class="swatch-name">Steel Blue</span>
+            </label>
+            <label class="color-swatch" style="--c1:#3A3F44;--c2:#A53028;" title="Slate / Brick Red">
+              <input type="radio" name="colorTheme" value="Slate / Brick Red">
+              <span class="swatch-name">Brick Red</span>
+            </label>
+            <label class="color-swatch" style="--c1:#1A1A1A;--c2:#B8923B;" title="Black / Mustard">
+              <input type="radio" name="colorTheme" value="Black / Mustard">
+              <span class="swatch-name">Mustard</span>
+            </label>
+            <label class="color-swatch" style="--c1:#4A2A40;--c2:#7A8033;" title="Plum / Olive">
+              <input type="radio" name="colorTheme" value="Plum / Olive">
+              <span class="swatch-name">Plum</span>
+            </label>
+          </div>
         </div>
 
         <div class="form-section-title">Headshot</div>
@@ -1028,13 +1124,20 @@
 
     pmForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!pmForm.querySelector('[name="address"]').value.trim()) {
+        alert('Please enter the property address before submitting.');
+        return;
+      }
       var d = new FormData(pmForm);
       var headline = d.get('headlineType');
+      var address = d.get('address') || '';
       var lines = [];
-      lines.push('I would like to order a Power Mail postcard campaign with the configuration below.');
+      lines.push('I would like to order a Power Mail postcard campaign for the listing at: ' + address);
+      lines.push('');
+      lines.push('NOTE: I am on the network side of LPT and do not have access to the marketing section of Connect, so I am ordering through this form.');
       lines.push('');
       lines.push('=== LISTING INFO ===');
-      lines.push('Property Address: ' + (d.get('address') || ''));
+      lines.push('Property Address: ' + address);
       lines.push('AR Code: ' + (d.get('arCode') || ''));
       lines.push('');
       lines.push('=== HEADLINE ===');
@@ -1060,7 +1163,7 @@
       lines.push('=== ESTIMATED TOTAL ===');
       lines.push(totalEl.textContent);
 
-      var subject = 'Order: Power Mail Postcard Campaign';
+      var subject = 'Order: Power Mail Postcard Campaign — ' + address;
       var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(lines.join('\n'));
       window.location.href = href;
@@ -1077,14 +1180,14 @@
     var ppTotal = document.getElementById('powerPackTotal');
     var ppPackSel = document.getElementById('pp-pack');
     var ppModalImg = document.getElementById('ppModalImage');
-    var PP_BASE = 99;
 
     function ppRecalc() {
-      var total = PP_BASE;
+      var packOpt = ppPackSel.selectedOptions[0];
+      var total = packOpt ? (parseFloat(packOpt.dataset.base) || 0) : 0;
       ppForm.querySelectorAll('input[type="checkbox"][data-add]').forEach(function (cb) {
         if (cb.checked) total += parseFloat(cb.dataset.add) || 0;
       });
-      ppTotal.textContent = '$' + total.toFixed(2);
+      ppTotal.textContent = total === 0 ? 'FREE — just pay shipping' : '$' + total.toFixed(2);
     }
 
     function ppUpdateConditionals() {
@@ -1147,17 +1250,25 @@
 
     ppForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!ppForm.querySelector('[name="address"]').value.trim()) {
+        alert('Please enter the property address before submitting.');
+        return;
+      }
       var d = new FormData(ppForm);
       var pack = d.get('packType');
       var headline = d.get('headlineType');
+      var address = d.get('address') || '';
+      var priceLabel = pack === 'Classic' ? 'FREE (just pay shipping)' : '$99.00';
       var lines = [];
-      lines.push('I would like to order the ' + pack + ' Power Pack ($99) with the configuration below.');
+      lines.push('I would like to order the ' + pack + ' Power Pack for the listing at: ' + address);
       lines.push('');
       lines.push('*** PLEASE ATTACH MY HEADSHOT TO THIS EMAIL ***');
       lines.push('Use the attached photo on my business cards, flyers, postcards, and door hangers.');
       lines.push('');
+      lines.push('NOTE: I am on the network side of LPT and do not have access to the marketing section of Connect, so I am ordering through this form.');
+      lines.push('');
       lines.push('=== POWER PACK ===');
-      lines.push(pack + ' Power Pack — $99.00');
+      lines.push(pack + ' Power Pack — ' + priceLabel);
       lines.push('');
       lines.push('=== AGENT INFO ===');
       lines.push('Name: ' + (d.get('agentName') || ''));
@@ -1166,12 +1277,12 @@
       lines.push('AR Code: ' + (d.get('arCode') || ''));
       lines.push('');
       lines.push('=== LISTING INFO ===');
-      lines.push('Property Address: ' + (d.get('address') || ''));
+      lines.push('Property Address: ' + address);
       if (pack === 'Express') {
         lines.push('Express Option: ' + (d.get('expressOption') || ''));
       }
       lines.push('');
-      lines.push('=== HEADLINE ===');
+      lines.push('=== CATEGORY / HEADLINE ===');
       lines.push('Type: ' + headline);
       if (headline === 'Open House') {
         lines.push('Open House Date/Time: ' + (d.get('openHouseDate') || ''));
@@ -1180,6 +1291,9 @@
         lines.push('Custom Headline: ' + (d.get('customHeadline') || ''));
         lines.push('Custom Tagline: ' + (d.get('customTagline') || ''));
       }
+      lines.push('');
+      lines.push('=== COLOR THEME ===');
+      lines.push(d.get('colorTheme') || '');
       lines.push('');
       lines.push('=== ADD-ONS ===');
       lines.push('Print Logo on Power Pack Box: ' + (d.get('logoOnBox') ? 'Yes' : 'No'));
@@ -1191,7 +1305,7 @@
       lines.push('');
       lines.push('Reminder: please confirm my headshot is attached before sending this email.');
 
-      var subject = 'Order: ' + pack + ' Power Pack';
+      var subject = 'Order: ' + pack + ' Power Pack — ' + address;
       var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(lines.join('\n'));
       window.location.href = href;
@@ -1203,30 +1317,52 @@
   // ===== Digital Marketing form =====
   var dmForm = document.getElementById('digitalForm');
   if (dmForm) {
-    function dmUpdateConditionals() {
+    var dmTotalEl = document.getElementById('digitalTotal');
+
+    function dmUpdate() {
       var typeEl = dmForm.querySelector('[name="digitalType"]:checked');
       var typeVal = typeEl ? typeEl.value : '';
       dmForm.querySelectorAll('[data-show-when]').forEach(function (row) {
         var cond = row.getAttribute('data-show-when').split('=');
         row.style.display = (cond[0] === 'digitalType' && cond[1] === typeVal) ? '' : 'none';
       });
+
+      var total = 0;
+      if (typeVal === 'Just Listed Digital Ads') {
+        total = 99;
+      } else if (typeVal === 'Open House Digital Ads') {
+        var durSel = dmForm.querySelector('[name="duration"]');
+        if (durSel && durSel.selectedOptions[0]) {
+          total = parseFloat(durSel.selectedOptions[0].dataset.base) || 0;
+        }
+      }
+      dmTotalEl.textContent = '$' + total.toFixed(2);
     }
-    dmForm.addEventListener('change', dmUpdateConditionals);
-    dmForm.addEventListener('input', dmUpdateConditionals);
+    dmForm.addEventListener('change', dmUpdate);
+    dmForm.addEventListener('input', dmUpdate);
 
     dmForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!dmForm.querySelector('[name="address"]').value.trim()) {
+        alert('Please enter the property address before submitting.');
+        return;
+      }
       var d = new FormData(dmForm);
       var type = d.get('digitalType');
+      var address = d.get('address') || '';
       var lines = [];
-      lines.push('I would like to order ' + type + ' for my listing.');
+      lines.push('I would like to order ' + type + ' for the listing at: ' + address);
       lines.push('');
       lines.push('*** PLEASE ATTACH MY HEADSHOT TO THIS EMAIL ***');
+      lines.push('');
+      lines.push('NOTE: I am on the network side of LPT and do not have access to the marketing section of Connect, so I am ordering through this form.');
       lines.push('');
       lines.push('=== CAMPAIGN TYPE ===');
       lines.push(type);
       if (type === 'Open House Digital Ads') {
-        lines.push('Open House Date/Time: ' + (d.get('openHouseDate') || ''));
+        lines.push('Date: ' + (d.get('openHouseDate') || ''));
+        lines.push('Start Time: ' + (d.get('startTime') || ''));
+        lines.push('End Time: ' + (d.get('endTime') || ''));
         lines.push('Duration: ' + (d.get('duration') || ''));
       }
       lines.push('');
@@ -1236,17 +1372,20 @@
       lines.push('AR Code: ' + (d.get('arCode') || ''));
       lines.push('');
       lines.push('=== LISTING INFO ===');
-      lines.push('Property Address: ' + (d.get('address') || ''));
+      lines.push('Property Address: ' + address);
+      lines.push('');
+      lines.push('=== ESTIMATED TOTAL ===');
+      lines.push(dmTotalEl.textContent);
       lines.push('');
       lines.push('Reminder: please confirm my headshot is attached before sending this email.');
 
-      var subject = 'Order: ' + type;
+      var subject = 'Order: ' + type + ' — ' + address;
       var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(lines.join('\n'));
       window.location.href = href;
     });
 
-    dmUpdateConditionals();
+    dmUpdate();
   }
 })();
 </script>
