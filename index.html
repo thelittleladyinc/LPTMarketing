@@ -12,15 +12,27 @@
     <div class="brand">lpt <span>realty</span></div>
     <h1>Marketing Offerings</h1>
     <p class="tagline">Browse every marketing product LPT offers. Click any item to email <a href="mailto:marketing@lpt.com">marketing@lpt.com</a> and place your order. <strong>Any design here can also be mailed as a postcard</strong> via <a href="#powermail">Power Mail</a>.</p>
-    <nav class="section-nav">
-      <a href="#property">Property Marketing</a>
-      <a href="#powermail">Power Mail</a>
-      <a href="#agent">Agent Marketing</a>
-      <a href="#social">Social Media</a>
-      <a href="#addons">Add-Ons</a>
-    </nav>
   </div>
 </header>
+
+<nav class="sticky-nav" aria-label="Sections">
+  <div class="container section-nav">
+    <a href="#property">Property Marketing</a>
+    <a href="#powermail">Power Mail</a>
+    <a href="#agent">Agent Marketing</a>
+    <a href="#social">Social Media</a>
+    <a href="#addons">Add-Ons</a>
+  </div>
+</nav>
+
+<div class="steps-banner">
+  <div class="container steps-banner-inner">
+    <div class="step"><span class="step-num">1</span><span class="step-text">Click any item</span></div>
+    <div class="step"><span class="step-num">2</span><span class="step-text">Configure your order</span></div>
+    <div class="step"><span class="step-num">3</span><span class="step-text">Submit via email</span></div>
+    <div class="step"><span class="step-num">4</span><span class="step-text">Attach your headshot if asked</span></div>
+  </div>
+</div>
 
 <main class="container">
 
@@ -307,54 +319,78 @@
     <h2>Agent Marketing</h2>
     <p class="lead">Build your personal brand. Bundles, business cards, magazines, and signage to grow your business.</p>
 
+    <div class="tabs" role="tablist" aria-label="Agent Marketing categories">
+      <button class="tab is-active" role="tab" aria-selected="true" data-tab="bundles">Bundles</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="business-cards">Business Cards</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="magazine-bundles">Magazine Bundles</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="individual-magazines">Individual Magazines</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="signage">Signage</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="power-packs">Power Packs</button>
+    </div>
+
+    <div class="tab-panel is-active" data-panel="bundles" role="tabpanel">
     <h3>Agent Essentials — Bundles</h3>
     <div class="grid">
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Marketing%20Starter%20Kit&body=I%20would%20like%20to%20order%20the%20Marketing%20Starter%20Kit%20(%2472).%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Marketing%20Starter%20Kit&body=I%20would%20like%20to%20order%20the%20Marketing%20Starter%20Kit%20(%2427.20%20with%20voucher).%20Please%20contact%20me%20to%20get%20started.">
         <div class="card-thumb"><img src="images/agent-bundles.png" alt="Marketing Starter Kit"></div>
         <div class="card-body">
-          <h4>Marketing Starter Kit</h4>
-          <span class="price">$72</span>
-          <p>250 business cards, 5 — 9 Critical Questions Magazine.</p>
+          <h4>Marketing Starter Kit <span class="tag tag-voucher">Voucher Available</span></h4>
+          <span class="price">$27.20</span>
+          <p>250 business cards, 1 Active Marketing Plan, 1 — 9 Critical Questions Magazine.</p>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Sign%20Essentials%20Bundle&body=I%20would%20like%20to%20order%20the%20Sign%20Essentials%20Bundle%20(%24146).%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Sign%20Essentials%20Bundle&body=I%20would%20like%20to%20order%20the%20Sign%20Essentials%20Bundle%20(%24150).%20Please%20contact%20me%20to%20get%20started.">
         <div class="card-thumb"><img src="images/yard-sign.png" alt="Sign Essentials Bundle"></div>
         <div class="card-body">
           <h4>Sign Essentials Bundle</h4>
-          <span class="price">$146</span>
-          <p>1 yard sign + 5 — Dot Riders (3 listing / 2 sold).</p>
+          <span class="price">$150</span>
+          <p>1 yard sign + 5 OH yard signs (3 left/right, 2 straight).</p>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Short%20Magazine%20Bundle&body=I%20would%20like%20to%20order%20the%20Short%20Magazine%20Bundle%20(%2428).%20Please%20contact%20me%20to%20get%20started.">
-        <div class="card-thumb"><img src="images/7-homebuyer-strategies.png" alt="Short Magazine Bundle"></div>
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Short%20Marketing%20Plans%20Bundle&body=I%20would%20like%20to%20order%20the%20Short%20Marketing%20Plans%20bundle%20(%2430%20%2F%2025%20pack).%20Please%20contact%20me%20to%20get%20started.">
+        <div class="card-thumb"><img src="images/marketing-plan-magazine.png" alt="Short Marketing Plans"></div>
         <div class="card-body">
-          <h4>Short Magazine</h4>
-          <span class="price">$28</span>
-          <p>5 — 7 Homebuyer Strategies short marketing magazines.</p>
+          <h4>Short Magazine — Marketing Plans</h4>
+          <span class="price">$30</span>
+          <p>25 — Short Marketing Plans.</p>
+        </div>
+      </a>
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Short%207%20Homebuyer%20Strategies%20Bundle&body=I%20would%20like%20to%20order%20the%20Short%207%20Homebuyer%20Strategies%20bundle%20(%2430%20%2F%2025%20pack).%20Please%20contact%20me%20to%20get%20started.">
+        <div class="card-thumb"><img src="images/7-homebuyer-strategies.png" alt="Short 7 Homebuyer Strategies"></div>
+        <div class="card-body">
+          <h4>Short Magazine — 7 Homebuyer Strategies</h4>
+          <span class="price">$30</span>
+          <p>25 — Short 7 Homebuyer Strategies Magazine.</p>
         </div>
       </a>
     </div>
 
+    </div><!-- /bundles panel -->
+
+    <div class="tab-panel" data-panel="business-cards" role="tabpanel" hidden>
     <h3>Business Cards</h3>
     <div class="grid">
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Business%20Cards%20Deluxe&body=I%20would%20like%20to%20order%20the%20Deluxe%20Business%20Cards%20(%2490%20%2F%201000).%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Business%20Cards%20Deluxe&body=I%20would%20like%20to%20order%20the%20Deluxe%20Business%20Cards%20(%2480%20%2F%201000).%20Please%20contact%20me%20to%20get%20started.">
         <div class="card-thumb"><img src="images/social-business-cards.png" alt="Business Cards Deluxe"></div>
         <div class="card-body">
           <h4>Business Cards — Deluxe</h4>
-          <span class="price">$90</span>
+          <span class="price">$80</span>
           <p>1,000 premium business cards.</p>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Business%20Cards%20Essentials&body=I%20would%20like%20to%20order%20the%20Essentials%20Business%20Cards%20(%2428%20%2F%20250).%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Business%20Cards%20Essentials&body=I%20would%20like%20to%20order%20the%20Essentials%20Business%20Cards%20(%2420%20%2F%20250).%20Please%20contact%20me%20to%20get%20started.">
         <div class="card-thumb"><img src="images/business-cards.png" alt="Business Cards Essentials"></div>
         <div class="card-body">
           <h4>Business Cards — Essentials</h4>
-          <span class="price">$28</span>
+          <span class="price">$20</span>
           <p>250 standard business cards.</p>
         </div>
       </a>
     </div>
 
+    </div><!-- /business-cards panel -->
+
+    <div class="tab-panel" data-panel="magazine-bundles" role="tabpanel" hidden>
     <h3>Magazine Bundles</h3>
     <div class="grid">
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Listing%20Kit%20Small&body=I%20would%20like%20to%20order%20the%20Listing%20Kit%20Small%20(%2472).%20Please%20contact%20me%20to%20get%20started.">
@@ -415,6 +451,9 @@
       </a>
     </div>
 
+    </div><!-- /magazine-bundles panel -->
+
+    <div class="tab-panel" data-panel="individual-magazines" role="tabpanel" hidden>
     <h3>Individual Magazines</h3>
     <div class="grid">
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Active%20Marketing%20Plans%20Magazine&body=I%20would%20like%20to%20order%20the%20Active%20Marketing%20Plans%20magazine.%20Please%20contact%20me%20with%20quantity%20options%20(10%2F20%2F30%2F40%2F50).">
@@ -447,6 +486,9 @@
       </a>
     </div>
 
+    </div><!-- /individual-magazines panel -->
+
+    <div class="tab-panel" data-panel="signage" role="tabpanel" hidden>
     <h3>Signage</h3>
     <div class="grid">
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Yard%20Signs&body=I%20would%20like%20to%20order%20Yard%20Signs.%20Please%20contact%20me%20with%20quantity%20options%20(1%2F2%2F3%2F4%2F5%20packs).">
@@ -465,6 +507,9 @@
       </a>
     </div>
 
+    </div><!-- /signage panel -->
+
+    <div class="tab-panel" data-panel="power-packs" role="tabpanel" hidden>
     <h3>Agent Power Packs</h3>
     <p class="sub">Agent prospecting & branding packs designed to help close more business.</p>
     <div class="grid">
@@ -517,6 +562,7 @@
         </div>
       </a>
     </div>
+    </div><!-- /power-packs panel -->
   </section>
 
   <!-- ============ SOCIAL MEDIA ============ -->
@@ -1676,6 +1722,49 @@
     });
 
     window.refreshLuxury();
+  }
+
+  // ===== Tabs (Agent Marketing) =====
+  document.querySelectorAll('.tabs').forEach(function (tabBar) {
+    var section = tabBar.closest('section');
+    if (!section) return;
+    var tabs = tabBar.querySelectorAll('.tab');
+    var panels = section.querySelectorAll('.tab-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var key = tab.getAttribute('data-tab');
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          var match = p.getAttribute('data-panel') === key;
+          p.classList.toggle('is-active', match);
+          p.hidden = !match;
+        });
+      });
+    });
+  });
+
+  // ===== Sticky nav: highlight current section =====
+  var navLinks = document.querySelectorAll('.sticky-nav a');
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var idToLink = {};
+    navLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      idToLink[id] = a;
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (a) { a.classList.remove('is-active'); });
+          var link = idToLink[entry.target.id];
+          if (link) link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('section.category').forEach(function (s) { io.observe(s); });
   }
 })();
 </script>
