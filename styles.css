@@ -186,6 +186,28 @@ body {
   font-size: 14px;
 }
 
+.card .breakdown {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--text);
+}
+.card .breakdown li {
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+}
+.card .breakdown li:last-child { border-bottom: none; }
+.card .breakdown li strong { color: var(--lpt-navy); }
+.card .breakdown-title {
+  margin: 14px 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--lpt-blue);
+}
+
 .price {
   display: inline-block;
   background: var(--lpt-blue);
