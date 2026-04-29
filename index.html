@@ -119,18 +119,46 @@
           <p class="form-hint" style="margin-top:8px;"><em>*Targets non-real-estate websites — designed for visibility, not lead capture.</em></p>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Waterfront%20Package&body=I%20would%20like%20to%20order%20the%20Waterfront%20marketing%20package.%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="#luxury-form" data-modal-target="luxuryFormModal" data-collection="Waterfront" data-collection-image="images/property-marketing-overview.png">
         <div class="card-thumb"><img src="images/property-marketing-overview.png" alt="Waterfront package"></div>
         <div class="card-body">
-          <h4>Waterfront <span class="tag">New</span></h4>
-          <p>Marketing tailored to entice buyers seeking the perfect waterfront escape.</p>
+          <h4>Waterfront <span class="tag tag-orange">Configure</span></h4>
+          <span class="price">From $499</span>
+          <p>Marketing tailored to entice buyers seeking the perfect waterfront escape. Choose <strong>Opal</strong>, <strong>Diamond</strong>, or <strong>Diamond Black</strong> tier when you order.</p>
+          <div class="breakdown-title">Three Tiers Available</div>
+          <ul class="breakdown">
+            <li><strong>Opal</strong> — $599 — Luxury Power Pack + signage + digital ads + portal placement</li>
+            <li><strong>Diamond</strong> — $499 + $1,500 at closing — Adds billboard + 500-piece direct mail</li>
+            <li><strong>Diamond Black</strong> — $749 + $2,750 at closing — Adds Just Sold campaigns, QR code, magazines</li>
+          </ul>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Ranch%20%26%20Land%20Package&body=I%20would%20like%20to%20order%20the%20Ranch%20%26%20Land%20marketing%20package.%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="#luxury-form" data-modal-target="luxuryFormModal" data-collection="Luxury Collection" data-collection-image="images/property-marketing-overview.png">
+        <div class="card-thumb"><img src="images/property-marketing-overview.png" alt="Luxury Collection"></div>
+        <div class="card-body">
+          <h4>Luxury Collection <span class="tag tag-orange">Configure</span></h4>
+          <span class="price">From $499</span>
+          <p>Elevate your luxury property marketing strategy. Targeted digital ads, iconic digital billboards in prime locales, and premium print. Choose <strong>Opal</strong>, <strong>Diamond</strong>, or <strong>Diamond Black</strong>.</p>
+          <div class="breakdown-title">Three Tiers Available</div>
+          <ul class="breakdown">
+            <li><strong>Opal</strong> — $599</li>
+            <li><strong>Diamond</strong> — $499 + $1,500 at closing</li>
+            <li><strong>Diamond Black</strong> — $749 + $2,750 at closing</li>
+          </ul>
+        </div>
+      </a>
+      <a class="card" href="#luxury-form" data-modal-target="luxuryFormModal" data-collection="Ranch & Land" data-collection-image="images/ranch-land.png">
         <div class="card-thumb"><img src="images/ranch-land.png" alt="Ranch & Land package"></div>
         <div class="card-body">
-          <h4>Ranch &amp; Land <span class="tag">New</span></h4>
-          <p>Specialized marketing for wide-open spaces, privacy, and opportunity.</p>
+          <h4>Ranch &amp; Land <span class="tag tag-orange">Configure</span></h4>
+          <span class="price">From $499</span>
+          <p>Specialized marketing for wide-open spaces, privacy, and opportunity. Choose <strong>Opal</strong>, <strong>Diamond</strong>, or <strong>Diamond Black</strong> tier when you order.</p>
+          <div class="breakdown-title">Three Tiers Available</div>
+          <ul class="breakdown">
+            <li><strong>Opal</strong> — $599</li>
+            <li><strong>Diamond</strong> — $499 + $1,500 at closing</li>
+            <li><strong>Diamond Black</strong> — $749 + $2,750 at closing</li>
+          </ul>
         </div>
       </a>
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Step-Up%20Collection%20Standard&body=I%20would%20like%20to%20order%20the%20Step-Up%20Collection%20Standard%20(%24349).%20Please%20contact%20me%20to%20get%20started.%0A%0AProperty%20Address%3A%20%0AAR%20Code%3A%20">
@@ -727,6 +755,151 @@
   </div>
 </div>
 
+<!-- ============ LUXURY / SPECIALTY COLLECTION FORM MODAL ============ -->
+<div id="luxuryFormModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lcTitle">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog-form" role="document">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <div class="modal-image"><img id="lcModalImage" src="images/property-marketing-overview.png" alt=""></div>
+    <div class="modal-body">
+      <h3 id="lcTitle">Luxury Collection — Configure Your Order</h3>
+      <p>Available for <strong>Waterfront</strong>, <strong>Luxury Collection</strong>, and <strong>Ranch &amp; Land</strong> listings. Pick a tier and we'll send a quote and proof.</p>
+
+      <form id="luxuryForm" novalidate>
+        <div class="form-section-title">Collection</div>
+        <div class="form-row">
+          <label for="lc-collection">Collection Type</label>
+          <select id="lc-collection" name="collection">
+            <option value="Waterfront" data-image="images/property-marketing-overview.png">Waterfront</option>
+            <option value="Luxury Collection" data-image="images/property-marketing-overview.png">Luxury Collection</option>
+            <option value="Ranch & Land" data-image="images/ranch-land.png">Ranch &amp; Land</option>
+          </select>
+        </div>
+
+        <div class="form-section-title">Tier</div>
+        <div class="form-row radio-row">
+          <label><input type="radio" name="tier" value="Opal" data-base="599" data-closing="0" checked> <strong>Opal Tier — $599</strong>
+            <span class="form-hint">Unlock unparalleled exposure with our all-inclusive package: dynamic signage, targeted digital ads, and prime placement on the LPT Luxury Collection website.</span>
+            <span class="form-hint"><strong>Includes:</strong> Luxury Collection Power Pack (16 5×7 postcards, 28 6×9 postcards, 24 8.5×11 fliers, 20 bi-fold &amp; 20 tri-fold brochures, 12 thank you cards, 21 business cards), Branded Property Signage (open house directionals + 'Text Code' sign rider), Luxury Collection website + portal placement, Digital Ad Campaign with 10K–20K impressions.</span>
+          </label>
+          <label><input type="radio" name="tier" value="Diamond" data-base="499" data-closing="1500"> <strong>Diamond Tier — $499 + $1,500 at closing</strong>
+            <span class="form-hint">Combines all of Opal with billboard placement and a 500-piece direct mail campaign for unmatched results.</span>
+            <span class="form-hint"><strong>Adds to Opal:</strong> Just Listed Digital Billboard placement (closest to listing address subject to availability; live tracking unavailable; billboard report after campaign), Just Listed Direct mail campaign (500-piece mailing).</span>
+          </label>
+          <label><input type="radio" name="tier" value="Diamond Black" data-base="749" data-closing="2750"> <strong>Diamond Black Tier — $749 + $2,750 at closing</strong>
+            <span class="form-hint">Top-tier package with billboards, Just Sold campaigns, dynamic QR codes, branded yard signs, and exclusive property magazines.</span>
+            <span class="form-hint"><strong>Adds to Diamond:</strong> Just Sold Billboard Placement, Just Sold Direct mail campaign (500-piece), Dynamic QR Code, Luxury Collection Branded Yard Sign / Main Panel, 10 Property-Specific Magazines.</span>
+          </label>
+        </div>
+
+        <div class="form-section-title">Agent Info</div>
+        <div class="form-row">
+          <label for="lc-agentName">Agent Name</label>
+          <input id="lc-agentName" name="agentName" type="text" placeholder="Your full name" required>
+        </div>
+        <div class="form-row">
+          <label for="lc-agentPhone">Phone Number</label>
+          <input id="lc-agentPhone" name="agentPhone" type="text" placeholder="(555) 555-5555">
+        </div>
+        <div class="form-row">
+          <label for="lc-agentEmail">Email</label>
+          <input id="lc-agentEmail" name="agentEmail" type="text" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="lc-ar">AR Code</label>
+          <input id="lc-ar" name="arCode" type="text" placeholder="Your AR number">
+        </div>
+
+        <div class="form-section-title">Listing Info</div>
+        <div class="form-row">
+          <label for="lc-address">Property Address <span class="form-hint" style="color:#c0392b;float:right;">required</span></label>
+          <input id="lc-address" name="address" type="text" placeholder="123 Main St, City, State ZIP" required>
+        </div>
+        <div class="form-row">
+          <label for="lc-listPrice">List Price (optional)</label>
+          <input id="lc-listPrice" name="listPrice" type="text" placeholder="$1,250,000">
+        </div>
+
+        <div class="form-section-title">Headline</div>
+        <div class="form-row">
+          <label for="lc-headline">Headline Type</label>
+          <select id="lc-headline" name="headlineType">
+            <option value="Just Listed">Just Listed</option>
+            <option value="Just Sold">Just Sold</option>
+            <option value="Open House">Open House</option>
+            <option value="Custom" selected>Custom</option>
+          </select>
+        </div>
+        <div class="form-row" data-show-when="headlineType=Open House">
+          <label for="lc-openHouseDate">Open House Date / Time</label>
+          <input id="lc-openHouseDate" name="openHouseDate" type="text" placeholder="Saturday May 4, 1–3pm">
+        </div>
+        <div class="form-row" data-show-when="headlineType=Custom">
+          <label for="lc-customHeadline">Custom Headline <span class="char-count" data-counter-for="lc-customHeadline">0/20</span></label>
+          <input id="lc-customHeadline" name="customHeadline" type="text" maxlength="20" minlength="5" placeholder="e.g. Lakefront Estate">
+        </div>
+        <div class="form-row" data-show-when="headlineType=Custom">
+          <label for="lc-customTagline">Custom Tagline <span class="char-count" data-counter-for="lc-customTagline">0/90</span></label>
+          <input id="lc-customTagline" name="customTagline" type="text" maxlength="90" placeholder="Your custom tagline">
+        </div>
+
+        <div class="form-section-title">Color Theme</div>
+        <div class="form-row">
+          <label>Pick one of the 9 color combinations</label>
+          <div class="color-swatches">
+            <label class="color-swatch" style="--c1:#A8A8A8;--c2:#1E1E1E;" title="Silver / Black">
+              <input type="radio" name="colorTheme" value="Silver / Black" checked><span class="swatch-name">Silver / Black</span>
+            </label>
+            <label class="color-swatch" style="--c1:#7A2230;--c2:#1A1A1A;" title="Burgundy / Black">
+              <input type="radio" name="colorTheme" value="Burgundy / Black"><span class="swatch-name">Burgundy</span>
+            </label>
+            <label class="color-swatch" style="--c1:#1E3A5F;--c2:#3D2640;" title="Navy / Plum">
+              <input type="radio" name="colorTheme" value="Navy / Plum"><span class="swatch-name">Navy</span>
+            </label>
+            <label class="color-swatch" style="--c1:#9C9080;--c2:#3D6E6B;" title="Khaki / Teal">
+              <input type="radio" name="colorTheme" value="Khaki / Teal"><span class="swatch-name">Khaki</span>
+            </label>
+            <label class="color-swatch" style="--c1:#2A2D32;--c2:#7A8033;" title="Charcoal / Olive">
+              <input type="radio" name="colorTheme" value="Charcoal / Olive"><span class="swatch-name">Charcoal</span>
+            </label>
+            <label class="color-swatch" style="--c1:#1A1A1A;--c2:#1E5F8B;" title="Black / Steel Blue">
+              <input type="radio" name="colorTheme" value="Black / Steel Blue"><span class="swatch-name">Steel Blue</span>
+            </label>
+            <label class="color-swatch" style="--c1:#3A3F44;--c2:#A53028;" title="Slate / Brick Red">
+              <input type="radio" name="colorTheme" value="Slate / Brick Red"><span class="swatch-name">Brick Red</span>
+            </label>
+            <label class="color-swatch" style="--c1:#1A1A1A;--c2:#B8923B;" title="Black / Mustard">
+              <input type="radio" name="colorTheme" value="Black / Mustard"><span class="swatch-name">Mustard</span>
+            </label>
+            <label class="color-swatch" style="--c1:#4A2A40;--c2:#7A8033;" title="Plum / Olive">
+              <input type="radio" name="colorTheme" value="Plum / Olive"><span class="swatch-name">Plum</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section-title">Headshot</div>
+        <div class="form-info-box">
+          <strong>📎 Attach your headshot to the order email.</strong>
+          <p class="form-hint">When your email app opens after Submit, attach the headshot you'd like used on print &amp; digital pieces.</p>
+        </div>
+
+        <div class="form-info-box" style="background:#eaf3fc;border-color:#b6d6f0;border-left-color:var(--lpt-blue);color:var(--lpt-navy);">
+          <strong>Note: 10-photo minimum required.</strong>
+          <p class="form-hint" style="color:var(--lpt-navy);">Luxury Collection orders need at least 10 high-resolution property photos. Please make sure they're uploaded to the listing before submitting.</p>
+        </div>
+
+        <div class="form-total">
+          <span>Estimated Total</span>
+          <span id="luxuryTotal">$599.00</span>
+        </div>
+
+        <button type="submit" class="modal-btn">Submit Order via Email</button>
+        <p class="form-hint" style="text-align:center;margin-top:10px;color:#c0392b;font-weight:600;">⚠ Don't forget to attach your headshot to the email before sending!</p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- ============ DIGITAL MARKETING FORM MODAL ============ -->
 <div id="digitalFormModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="digitalTitle">
   <div class="modal-backdrop" data-modal-close></div>
@@ -1052,6 +1225,8 @@
         if (target) {
           if (targetId === 'powerPackFormModal') {
             prefillPowerPack(card);
+          } else if (targetId === 'luxuryFormModal') {
+            prefillLuxury(card);
           }
           showModal(target);
         }
@@ -1069,6 +1244,16 @@
     if (sel && pack) sel.value = pack;
     if (modalImg && img) modalImg.src = img;
     if (window.refreshPowerPack) window.refreshPowerPack();
+  }
+
+  function prefillLuxury(card) {
+    var collection = card.getAttribute('data-collection');
+    var img = card.getAttribute('data-collection-image');
+    var sel = document.getElementById('lc-collection');
+    var modalImg = document.getElementById('lcModalImage');
+    if (sel && collection) sel.value = collection;
+    if (modalImg && img) modalImg.src = img;
+    if (window.refreshLuxury) window.refreshLuxury();
   }
 
   document.addEventListener('keydown', function (e) {
@@ -1386,6 +1571,111 @@
     });
 
     dmUpdate();
+  }
+
+  // ===== Luxury / Specialty Collection form =====
+  var lcForm = document.getElementById('luxuryForm');
+  if (lcForm) {
+    var lcTotal = document.getElementById('luxuryTotal');
+    var lcCollectionSel = document.getElementById('lc-collection');
+    var lcModalImg = document.getElementById('lcModalImage');
+
+    function lcRecalc() {
+      var tier = lcForm.querySelector('[name="tier"]:checked');
+      if (!tier) { lcTotal.textContent = '$0.00'; return; }
+      var base = parseFloat(tier.dataset.base) || 0;
+      var closing = parseFloat(tier.dataset.closing) || 0;
+      var label = '$' + base.toFixed(2);
+      if (closing > 0) label += ' + $' + closing.toFixed(2) + ' at closing';
+      lcTotal.textContent = label;
+    }
+
+    function lcUpdateConditionals() {
+      var headlineType = lcForm.querySelector('[name="headlineType"]').value;
+      lcForm.querySelectorAll('[data-show-when]').forEach(function (row) {
+        var cond = row.getAttribute('data-show-when').split('=');
+        var fieldEl = lcForm.querySelector('[name="' + cond[0] + '"]');
+        if (!fieldEl) return;
+        row.style.display = (fieldEl.value === cond[1]) ? '' : 'none';
+      });
+      var opt = lcCollectionSel.selectedOptions[0];
+      if (opt && opt.dataset.image && lcModalImg) {
+        lcModalImg.src = opt.dataset.image;
+      }
+    }
+
+    function lcUpdateCounters() {
+      lcForm.querySelectorAll('[data-counter-for]').forEach(function (counter) {
+        var input = document.getElementById(counter.getAttribute('data-counter-for'));
+        if (input) counter.textContent = input.value.length + '/' + input.maxLength;
+      });
+    }
+
+    window.refreshLuxury = function () {
+      lcRecalc();
+      lcUpdateConditionals();
+      lcUpdateCounters();
+    };
+
+    lcForm.addEventListener('input', window.refreshLuxury);
+    lcForm.addEventListener('change', window.refreshLuxury);
+
+    lcForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!lcForm.querySelector('[name="address"]').value.trim()) {
+        alert('Please enter the property address before submitting.');
+        return;
+      }
+      var d = new FormData(lcForm);
+      var collection = d.get('collection');
+      var tier = d.get('tier');
+      var headline = d.get('headlineType');
+      var address = d.get('address') || '';
+      var lines = [];
+      lines.push('I would like to order the ' + collection + ' — ' + tier + ' Tier package for the listing at: ' + address);
+      lines.push('');
+      lines.push('*** PLEASE ATTACH MY HEADSHOT TO THIS EMAIL ***');
+      lines.push('');
+      lines.push('NOTE: I am on the network side of LPT and do not have access to the marketing section of Connect, so I am ordering through this form.');
+      lines.push('');
+      lines.push('=== COLLECTION ===');
+      lines.push(collection);
+      lines.push('');
+      lines.push('=== TIER ===');
+      lines.push(tier + ' — ' + lcTotal.textContent);
+      lines.push('');
+      lines.push('=== AGENT INFO ===');
+      lines.push('Name: ' + (d.get('agentName') || ''));
+      lines.push('Phone: ' + (d.get('agentPhone') || ''));
+      lines.push('Email: ' + (d.get('agentEmail') || ''));
+      lines.push('AR Code: ' + (d.get('arCode') || ''));
+      lines.push('');
+      lines.push('=== LISTING INFO ===');
+      lines.push('Property Address: ' + address);
+      lines.push('List Price: ' + (d.get('listPrice') || ''));
+      lines.push('');
+      lines.push('=== HEADLINE ===');
+      lines.push('Type: ' + headline);
+      if (headline === 'Open House') {
+        lines.push('Open House Date/Time: ' + (d.get('openHouseDate') || ''));
+      }
+      if (headline === 'Custom') {
+        lines.push('Custom Headline: ' + (d.get('customHeadline') || ''));
+        lines.push('Custom Tagline: ' + (d.get('customTagline') || ''));
+      }
+      lines.push('');
+      lines.push('=== COLOR THEME ===');
+      lines.push(d.get('colorTheme') || '');
+      lines.push('');
+      lines.push('Reminder: 10-photo minimum required for Luxury Collection orders. Please confirm photos are uploaded and headshot is attached.');
+
+      var subject = 'Order: ' + collection + ' — ' + tier + ' Tier — ' + address;
+      var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = href;
+    });
+
+    window.refreshLuxury();
   }
 })();
 </script>
