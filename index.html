@@ -32,7 +32,7 @@
     <h3>Power Pack</h3>
     <p class="sub">All-in-one print marketing — sign rider, flyers, postcards, door hangers, business cards, thank-you cards, and more.</p>
     <div class="grid">
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Power%20Pack%20Classic&body=I%20would%20like%20to%20order%20the%20Power%20Pack%20Classic%20(%2499).%20Please%20contact%20me%20to%20get%20started.%0A%0AProperty%20Address%3A%20%0AAR%20Code%3A%20%0ACategory%20(Just%20Listed%20%2F%20Open%20House%20%2F%20Custom)%3A%20">
+      <a class="card" href="#powerpack-form" data-modal-target="powerPackFormModal" data-pack="Classic" data-pack-image="images/Power-Pack.png">
         <div class="card-thumb"><img src="images/Power-Pack.png" alt="Classic Power Pack"></div>
         <div class="card-body">
           <h4>Classic Power Pack</h4>
@@ -51,7 +51,7 @@
           </ul>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Power%20Pack%20Express&body=I%20would%20like%20to%20order%20the%20Power%20Pack%20Express%20(%2499).%20Please%20contact%20me%20to%20get%20started.%0A%0AProperty%20Address%3A%20%0AAR%20Code%3A%20">
+      <a class="card" href="#powerpack-form" data-modal-target="powerPackFormModal" data-pack="Express" data-pack-image="images/Express.png">
         <div class="card-thumb"><img src="images/Express.png" alt="Express Power Pack"></div>
         <div class="card-body">
           <h4>Express Power Pack</h4>
@@ -71,7 +71,7 @@
           </ul>
         </div>
       </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Power%20Pack%20Prospecting&body=I%20would%20like%20to%20order%20the%20Power%20Pack%20Prospecting%20(%2499).%20Please%20contact%20me%20to%20get%20started.%0A%0AProperty%20Address%3A%20%0AAR%20Code%3A%20">
+      <a class="card" href="#powerpack-form" data-modal-target="powerPackFormModal" data-pack="Prospecting" data-pack-image="images/Prospecting.png">
         <div class="card-thumb"><img src="images/Prospecting.png" alt="Prospecting Power Pack"></div>
         <div class="card-body">
           <h4>Prospecting Power Pack</h4>
@@ -739,6 +739,118 @@
   </div>
 </div>
 
+<!-- ============ POWER PACK FORM MODAL ============ -->
+<div id="powerPackFormModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ppTitle">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog-form" role="document">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <div class="modal-image"><img id="ppModalImage" src="images/Power-Pack.png" alt="Power Pack"></div>
+    <div class="modal-body">
+      <h3 id="ppTitle">Power Pack — Configure Your Order</h3>
+      <p>Fill out the order details below. <strong>After you click Submit, your email app will open — please attach the headshot you'd like used on your marketing pieces before sending.</strong></p>
+
+      <form id="powerPackForm" novalidate>
+        <div class="form-section-title">Pack Selection</div>
+        <div class="form-row">
+          <label for="pp-pack">Power Pack</label>
+          <select id="pp-pack" name="packType">
+            <option value="Classic" data-image="images/Power-Pack.png">Classic Power Pack — $99</option>
+            <option value="Express" data-image="images/Express.png">Express Power Pack — $99</option>
+            <option value="Prospecting" data-image="images/Prospecting.png">Prospecting Power Pack — $99</option>
+          </select>
+        </div>
+
+        <div class="form-section-title">Agent Info</div>
+        <div class="form-row">
+          <label for="pp-agentName">Agent Name</label>
+          <input id="pp-agentName" name="agentName" type="text" placeholder="Your full name" required>
+        </div>
+        <div class="form-row">
+          <label for="pp-agentPhone">Phone Number</label>
+          <input id="pp-agentPhone" name="agentPhone" type="text" placeholder="(555) 555-5555">
+        </div>
+        <div class="form-row">
+          <label for="pp-agentEmail">Email</label>
+          <input id="pp-agentEmail" name="agentEmail" type="text" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label for="pp-ar">AR Code</label>
+          <input id="pp-ar" name="arCode" type="text" placeholder="Your AR number">
+        </div>
+
+        <div class="form-section-title">Listing Info</div>
+        <div class="form-row">
+          <label for="pp-address">Property Address</label>
+          <input id="pp-address" name="address" type="text" placeholder="123 Main St, City, State ZIP">
+        </div>
+        <div class="form-row" data-pack-only="Express">
+          <label>Express Option (choose one)</label>
+          <div class="form-row radio-row">
+            <label><input type="radio" name="expressOption" value="Neighborhood Report" checked> <strong>Neighborhood Report</strong>
+              <span class="form-hint">Customized map of the new neighborhood plus local business and restaurant listings.</span>
+            </label>
+            <label><input type="radio" name="expressOption" value="Door Hangers"> <strong>Door Hangers</strong>
+              <span class="form-hint">Add door hangers to your Express Power Pack.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section-title">Headline</div>
+        <div class="form-row">
+          <label for="pp-headline">Headline Type</label>
+          <select id="pp-headline" name="headlineType">
+            <option value="Just Listed">Just Listed</option>
+            <option value="Just Sold">Just Sold</option>
+            <option value="Open House">Open House</option>
+            <option value="Price Reduced">Price Reduced</option>
+            <option value="Custom" selected>Custom</option>
+          </select>
+        </div>
+        <div class="form-row" data-show-when="headlineType=Open House">
+          <label for="pp-openHouseDate">Open House Date / Time</label>
+          <input id="pp-openHouseDate" name="openHouseDate" type="text" placeholder="Saturday May 4, 1–3pm">
+        </div>
+        <div class="form-row" data-show-when="headlineType=Custom">
+          <label for="pp-customHeadline">Custom Headline <span class="char-count" data-counter-for="pp-customHeadline">0/20</span> <span class="form-hint" style="color:#c0392b;float:right;margin-left:8px;">min 5 characters</span></label>
+          <input id="pp-customHeadline" name="customHeadline" type="text" maxlength="20" minlength="5" placeholder="e.g. Rocky Mountain Views">
+        </div>
+        <div class="form-row" data-show-when="headlineType=Custom">
+          <label for="pp-customTagline">Custom Tagline <span class="char-count" data-counter-for="pp-customTagline">0/90</span></label>
+          <input id="pp-customTagline" name="customTagline" type="text" maxlength="90" placeholder="e.g. Little Lady, BIG Marketing">
+        </div>
+
+        <div class="form-section-title">Headshot</div>
+        <div class="form-info-box">
+          <strong>📎 Attach your headshot to the order email.</strong>
+          <p class="form-hint">When your email app opens after Submit, attach the headshot photo you'd like printed on your business cards, flyers, postcards, and door hangers. High-resolution (300 dpi) preferred.</p>
+        </div>
+
+        <div class="form-section-title">Add-Ons</div>
+        <div class="form-row checkbox-row">
+          <label><input type="checkbox" name="logoOnBox" value="Yes"> <strong>Print Logo on Power Pack Box — Free</strong></label>
+          <p class="form-hint">Print the LPT brokerage logo on the outside of your Power Pack box.</p>
+        </div>
+        <div class="form-row checkbox-row">
+          <label><input type="checkbox" name="leadComm" value="Yes" data-add="5"> <strong>Lead Communication Platform — $5.00</strong></label>
+          <p class="form-hint">Power Connect, Auto SMS Text Messaging, and Follow-Up.</p>
+        </div>
+        <div class="form-row checkbox-row">
+          <label><input type="checkbox" name="neighborhoodReportAddon" value="Yes"> <strong>Neighborhood Report — Free</strong></label>
+          <p class="form-hint">Customized neighborhood map plus local business and restaurant listings.</p>
+        </div>
+
+        <div class="form-total">
+          <span>Estimated Total</span>
+          <span id="powerPackTotal">$99.00</span>
+        </div>
+
+        <button type="submit" class="modal-btn">Submit Order via Email</button>
+        <p class="form-hint" style="text-align:center;margin-top:10px;color:#c0392b;font-weight:600;">⚠ Don't forget to attach your headshot to the email before sending!</p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="container">
     <p>&copy; LPT Realty — Marketing Offerings. Order via <a href="mailto:marketing@lpt.com">marketing@lpt.com</a>.</p>
@@ -799,12 +911,27 @@
       var targetId = card.getAttribute('data-modal-target');
       if (targetId) {
         var target = document.getElementById(targetId);
-        if (target) showModal(target);
+        if (target) {
+          if (targetId === 'powerPackFormModal') {
+            prefillPowerPack(card);
+          }
+          showModal(target);
+        }
       } else {
         openDetailModal(card);
       }
     }
   });
+
+  function prefillPowerPack(card) {
+    var pack = card.getAttribute('data-pack');
+    var img = card.getAttribute('data-pack-image');
+    var sel = document.getElementById('pp-pack');
+    var modalImg = document.getElementById('ppModalImage');
+    if (sel && pack) sel.value = pack;
+    if (modalImg && img) modalImg.src = img;
+    if (window.refreshPowerPack) window.refreshPowerPack();
+  }
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
@@ -900,6 +1027,113 @@
     recalcTotal();
     updateConditionalRows();
     updateCounters();
+  }
+
+  // ===== Power Pack form =====
+  var ppForm = document.getElementById('powerPackForm');
+  if (ppForm) {
+    var ppTotal = document.getElementById('powerPackTotal');
+    var ppPackSel = document.getElementById('pp-pack');
+    var ppModalImg = document.getElementById('ppModalImage');
+    var PP_BASE = 99;
+
+    function ppRecalc() {
+      var total = PP_BASE;
+      ppForm.querySelectorAll('input[type="checkbox"][data-add]').forEach(function (cb) {
+        if (cb.checked) total += parseFloat(cb.dataset.add) || 0;
+      });
+      ppTotal.textContent = '$' + total.toFixed(2);
+    }
+
+    function ppUpdateConditionals() {
+      var headlineType = ppForm.querySelector('[name="headlineType"]').value;
+      ppForm.querySelectorAll('[data-show-when]').forEach(function (row) {
+        var cond = row.getAttribute('data-show-when').split('=');
+        var fieldEl = ppForm.querySelector('[name="' + cond[0] + '"]');
+        if (!fieldEl) return;
+        row.style.display = (fieldEl.value === cond[1]) ? '' : 'none';
+      });
+
+      var pack = ppPackSel.value;
+      ppForm.querySelectorAll('[data-pack-only]').forEach(function (row) {
+        row.style.display = (row.getAttribute('data-pack-only') === pack) ? '' : 'none';
+      });
+
+      var selectedOpt = ppPackSel.selectedOptions[0];
+      if (selectedOpt && selectedOpt.dataset.image && ppModalImg) {
+        ppModalImg.src = selectedOpt.dataset.image;
+      }
+    }
+
+    function ppUpdateCounters() {
+      ppForm.querySelectorAll('[data-counter-for]').forEach(function (counter) {
+        var input = document.getElementById(counter.getAttribute('data-counter-for'));
+        if (input) counter.textContent = input.value.length + '/' + input.maxLength;
+      });
+    }
+
+    window.refreshPowerPack = function () {
+      ppRecalc();
+      ppUpdateConditionals();
+      ppUpdateCounters();
+    };
+
+    ppForm.addEventListener('input', window.refreshPowerPack);
+    ppForm.addEventListener('change', window.refreshPowerPack);
+
+    ppForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var d = new FormData(ppForm);
+      var pack = d.get('packType');
+      var headline = d.get('headlineType');
+      var lines = [];
+      lines.push('I would like to order the ' + pack + ' Power Pack ($99) with the configuration below.');
+      lines.push('');
+      lines.push('*** PLEASE ATTACH MY HEADSHOT TO THIS EMAIL ***');
+      lines.push('Use the attached photo on my business cards, flyers, postcards, and door hangers.');
+      lines.push('');
+      lines.push('=== POWER PACK ===');
+      lines.push(pack + ' Power Pack — $99.00');
+      lines.push('');
+      lines.push('=== AGENT INFO ===');
+      lines.push('Name: ' + (d.get('agentName') || ''));
+      lines.push('Phone: ' + (d.get('agentPhone') || ''));
+      lines.push('Email: ' + (d.get('agentEmail') || ''));
+      lines.push('AR Code: ' + (d.get('arCode') || ''));
+      lines.push('');
+      lines.push('=== LISTING INFO ===');
+      lines.push('Property Address: ' + (d.get('address') || ''));
+      if (pack === 'Express') {
+        lines.push('Express Option: ' + (d.get('expressOption') || ''));
+      }
+      lines.push('');
+      lines.push('=== HEADLINE ===');
+      lines.push('Type: ' + headline);
+      if (headline === 'Open House') {
+        lines.push('Open House Date/Time: ' + (d.get('openHouseDate') || ''));
+      }
+      if (headline === 'Custom') {
+        lines.push('Custom Headline: ' + (d.get('customHeadline') || ''));
+        lines.push('Custom Tagline: ' + (d.get('customTagline') || ''));
+      }
+      lines.push('');
+      lines.push('=== ADD-ONS ===');
+      lines.push('Print Logo on Power Pack Box: ' + (d.get('logoOnBox') ? 'Yes' : 'No'));
+      lines.push('Lead Communication Platform: ' + (d.get('leadComm') ? 'Yes (+$5.00)' : 'No'));
+      lines.push('Neighborhood Report: ' + (d.get('neighborhoodReportAddon') ? 'Yes (free)' : 'No'));
+      lines.push('');
+      lines.push('=== ESTIMATED TOTAL ===');
+      lines.push(ppTotal.textContent);
+      lines.push('');
+      lines.push('Reminder: please confirm my headshot is attached before sending this email.');
+
+      var subject = 'Order: ' + pack + ' Power Pack';
+      var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = href;
+    });
+
+    window.refreshPowerPack();
   }
 })();
 </script>
