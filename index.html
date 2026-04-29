@@ -90,38 +90,21 @@
       </a>
     </div>
 
-    <h3>Power Pack Categories</h3>
-    <div class="grid">
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Just%20Listed%20Power%20Pack&body=I%20would%20like%20to%20order%20a%20Just%20Listed%20Power%20Pack.%20Please%20contact%20me%20to%20get%20started.">
-        <div class="card-thumb"><img src="images/property-marketing-types.png" alt="Just Listed marketing"></div>
-        <div class="card-body">
-          <h4>Just Listed</h4>
-          <p>Complete print campaign for a newly listed property.</p>
-        </div>
-      </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Open%20House%20Power%20Pack&body=I%20would%20like%20to%20order%20an%20Open%20House%20Power%20Pack.%20Please%20contact%20me%20to%20get%20started.%0A%0AOpen%20House%20Date%2FTime%3A%20">
-        <div class="card-thumb"><img src="images/open-house-digital-ads.png" alt="Open House marketing"></div>
-        <div class="card-body">
-          <h4>Open House</h4>
-          <p>Generate interest with printed materials including event date and time.</p>
-        </div>
-      </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Custom%20Power%20Pack&body=I%20would%20like%20to%20order%20a%20Custom%20Power%20Pack.%20Please%20contact%20me%20to%20get%20started.%0A%0AHeadline%2FTagline%3A%20">
-        <div class="card-thumb"><img src="images/property-marketing-overview.png" alt="Custom marketing"></div>
-        <div class="card-body">
-          <h4>Custom</h4>
-          <p>From "Priced to Sell" to "Waterfront Property" — custom headline and tagline.</p>
-        </div>
-      </a>
-    </div>
+    <p class="sub" style="margin-top:8px;"><em>Each Power Pack can be customized as Just Listed, Open House, or Custom (any design or headline you want). Express and Prospecting also support Just Sold campaigns. You'll choose your category when you click into the pack.</em></p>
 
     <h3>Specialty Packages</h3>
     <div class="grid">
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Digital%20Marketing&body=I%20would%20like%20to%20order%20Digital%20Marketing%20for%20my%20listing.%20Please%20contact%20me%20to%20get%20started.">
+      <a class="card" href="#digital-form" data-modal-target="digitalFormModal">
         <div class="card-thumb"><img src="images/digital-ads.png" alt="Digital Marketing"></div>
         <div class="card-body">
-          <h4>Digital Marketing</h4>
-          <p>Targeted online ads on top websites — reach buyers actively searching for your listing.</p>
+          <h4>Digital Marketing <span class="tag tag-orange">Configure</span></h4>
+          <span class="price">From $99</span>
+          <p>Targeted online ads on top websites — reach buyers actively searching for your listing. Click to choose between <strong>Digital Ads</strong> (just listed) and <strong>Open House Digital Ads</strong>.</p>
+          <div class="breakdown-title">Two Types Available</div>
+          <ul class="breakdown">
+            <li><strong>Digital Ads</strong> — $99 — Complete online campaign for your active listing</li>
+            <li><strong>Open House Digital Ads</strong> — from $99 — Drive event attendance with date/time-aware creatives</li>
+          </ul>
         </div>
       </a>
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Waterfront%20Package&body=I%20would%20like%20to%20order%20the%20Waterfront%20marketing%20package.%20Please%20contact%20me%20to%20get%20started.">
@@ -204,13 +187,6 @@
           <ul class="breakdown">
             <li>Minimum <strong>10 property photos</strong> required</li>
           </ul>
-        </div>
-      </a>
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Property%20Digital%20Ads&body=I%20would%20like%20to%20order%20Digital%20Ads%20for%20my%20listing.%20Please%20contact%20me%20to%20get%20started.">
-        <div class="card-thumb"><img src="images/digital-ads.png" alt="Digital Ads"></div>
-        <div class="card-body">
-          <h4>Digital Ads</h4>
-          <p>Targeted online advertising campaigns designed to reach the right buyers.</p>
         </div>
       </a>
       <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Social%20Media%20Ads&body=I%20would%20like%20to%20order%20Social%20Media%20Ads%20for%20my%20listing.%20Please%20contact%20me%20to%20get%20started.">
@@ -739,6 +715,72 @@
   </div>
 </div>
 
+<!-- ============ DIGITAL MARKETING FORM MODAL ============ -->
+<div id="digitalFormModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="digitalTitle">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog-form" role="document">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <div class="modal-image"><img src="images/digital-ads.png" alt="Digital Marketing"></div>
+    <div class="modal-body">
+      <h3 id="digitalTitle">Digital Marketing — Configure Your Campaign</h3>
+      <p>Reach buyers searching online for properties like yours. Pick your campaign type and we'll send a quote and proof.</p>
+
+      <form id="digitalForm" novalidate>
+        <div class="form-section-title">Campaign Type</div>
+        <div class="form-row radio-row">
+          <label><input type="radio" name="digitalType" value="Digital Ads" checked> <strong>Digital Ads — $99</strong>
+            <span class="form-hint">Complete online marketing campaign that targets buyers near your active listing across top websites.</span>
+          </label>
+          <label><input type="radio" name="digitalType" value="Open House Digital Ads"> <strong>Open House Digital Ads — from $99</strong>
+            <span class="form-hint">Drive open-house attendance with creatives that include your event date and time.</span>
+          </label>
+        </div>
+
+        <div class="form-section-title">Agent Info</div>
+        <div class="form-row">
+          <label for="dm-agentName">Agent Name</label>
+          <input id="dm-agentName" name="agentName" type="text" placeholder="Your full name">
+        </div>
+        <div class="form-row">
+          <label for="dm-agentPhone">Phone Number</label>
+          <input id="dm-agentPhone" name="agentPhone" type="text" placeholder="(555) 555-5555">
+        </div>
+        <div class="form-row">
+          <label for="dm-ar">AR Code</label>
+          <input id="dm-ar" name="arCode" type="text" placeholder="Your AR number">
+        </div>
+
+        <div class="form-section-title">Listing Info</div>
+        <div class="form-row">
+          <label for="dm-address">Property Address</label>
+          <input id="dm-address" name="address" type="text" placeholder="123 Main St, City, State ZIP">
+        </div>
+        <div class="form-row" data-show-when="digitalType=Open House Digital Ads">
+          <label for="dm-openHouseDate">Open House Date / Time</label>
+          <input id="dm-openHouseDate" name="openHouseDate" type="text" placeholder="Saturday May 4, 1–3pm">
+        </div>
+        <div class="form-row" data-show-when="digitalType=Open House Digital Ads">
+          <label for="dm-duration">Campaign Duration</label>
+          <select id="dm-duration" name="duration">
+            <option value="3 Days">3 Days — $99</option>
+            <option value="6 Days">6 Days — $189</option>
+            <option value="9 Days">9 Days — $279</option>
+          </select>
+        </div>
+
+        <div class="form-section-title">Headshot</div>
+        <div class="form-info-box">
+          <strong>📎 Attach your headshot to the order email.</strong>
+          <p class="form-hint">When your email app opens after Submit, attach the headshot you'd like used in the digital creatives.</p>
+        </div>
+
+        <button type="submit" class="modal-btn">Submit Order via Email</button>
+        <p class="form-hint" style="text-align:center;margin-top:10px;color:#c0392b;font-weight:600;">⚠ Don't forget to attach your headshot to the email before sending!</p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- ============ POWER PACK FORM MODAL ============ -->
 <div id="powerPackFormModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ppTitle">
   <div class="modal-backdrop" data-modal-close></div>
@@ -795,16 +837,16 @@
           </div>
         </div>
 
-        <div class="form-section-title">Headline</div>
+        <div class="form-section-title">Category</div>
         <div class="form-row">
-          <label for="pp-headline">Headline Type</label>
+          <label for="pp-headline">Power Pack Category</label>
           <select id="pp-headline" name="headlineType">
             <option value="Just Listed">Just Listed</option>
-            <option value="Just Sold">Just Sold</option>
+            <option value="Just Sold" data-pack-only="Express,Prospecting">Just Sold</option>
             <option value="Open House">Open House</option>
-            <option value="Price Reduced">Price Reduced</option>
             <option value="Custom" selected>Custom</option>
           </select>
+          <p class="form-hint">Just Sold is available with Express and Prospecting packs.</p>
         </div>
         <div class="form-row" data-show-when="headlineType=Open House">
           <label for="pp-openHouseDate">Open House Date / Time</label>
@@ -1046,7 +1088,27 @@
     }
 
     function ppUpdateConditionals() {
-      var headlineType = ppForm.querySelector('[name="headlineType"]').value;
+      var pack = ppPackSel.value;
+
+      // Filter headline options by pack (option-level data-pack-only is comma-separated)
+      var headlineSel = ppForm.querySelector('[name="headlineType"]');
+      Array.prototype.forEach.call(headlineSel.options, function (opt) {
+        var only = opt.getAttribute('data-pack-only');
+        if (only) {
+          var allowed = only.split(',').map(function (s) { return s.trim(); });
+          var show = allowed.indexOf(pack) !== -1;
+          opt.hidden = !show;
+          opt.disabled = !show;
+        }
+      });
+      // If current selection became hidden, fall back to first visible option
+      if (headlineSel.selectedOptions[0] && headlineSel.selectedOptions[0].hidden) {
+        for (var i = 0; i < headlineSel.options.length; i++) {
+          if (!headlineSel.options[i].hidden) { headlineSel.selectedIndex = i; break; }
+        }
+      }
+
+      var headlineType = headlineSel.value;
       ppForm.querySelectorAll('[data-show-when]').forEach(function (row) {
         var cond = row.getAttribute('data-show-when').split('=');
         var fieldEl = ppForm.querySelector('[name="' + cond[0] + '"]');
@@ -1054,9 +1116,11 @@
         row.style.display = (fieldEl.value === cond[1]) ? '' : 'none';
       });
 
-      var pack = ppPackSel.value;
-      ppForm.querySelectorAll('[data-pack-only]').forEach(function (row) {
-        row.style.display = (row.getAttribute('data-pack-only') === pack) ? '' : 'none';
+      // Row-level data-pack-only (e.g. Express-only options)
+      ppForm.querySelectorAll('[data-pack-only]').forEach(function (el) {
+        if (el.tagName === 'OPTION') return;
+        var allowed = el.getAttribute('data-pack-only').split(',').map(function (s) { return s.trim(); });
+        el.style.display = (allowed.indexOf(pack) !== -1) ? '' : 'none';
       });
 
       var selectedOpt = ppPackSel.selectedOptions[0];
@@ -1134,6 +1198,55 @@
     });
 
     window.refreshPowerPack();
+  }
+
+  // ===== Digital Marketing form =====
+  var dmForm = document.getElementById('digitalForm');
+  if (dmForm) {
+    function dmUpdateConditionals() {
+      var typeEl = dmForm.querySelector('[name="digitalType"]:checked');
+      var typeVal = typeEl ? typeEl.value : '';
+      dmForm.querySelectorAll('[data-show-when]').forEach(function (row) {
+        var cond = row.getAttribute('data-show-when').split('=');
+        row.style.display = (cond[0] === 'digitalType' && cond[1] === typeVal) ? '' : 'none';
+      });
+    }
+    dmForm.addEventListener('change', dmUpdateConditionals);
+    dmForm.addEventListener('input', dmUpdateConditionals);
+
+    dmForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var d = new FormData(dmForm);
+      var type = d.get('digitalType');
+      var lines = [];
+      lines.push('I would like to order ' + type + ' for my listing.');
+      lines.push('');
+      lines.push('*** PLEASE ATTACH MY HEADSHOT TO THIS EMAIL ***');
+      lines.push('');
+      lines.push('=== CAMPAIGN TYPE ===');
+      lines.push(type);
+      if (type === 'Open House Digital Ads') {
+        lines.push('Open House Date/Time: ' + (d.get('openHouseDate') || ''));
+        lines.push('Duration: ' + (d.get('duration') || ''));
+      }
+      lines.push('');
+      lines.push('=== AGENT INFO ===');
+      lines.push('Name: ' + (d.get('agentName') || ''));
+      lines.push('Phone: ' + (d.get('agentPhone') || ''));
+      lines.push('AR Code: ' + (d.get('arCode') || ''));
+      lines.push('');
+      lines.push('=== LISTING INFO ===');
+      lines.push('Property Address: ' + (d.get('address') || ''));
+      lines.push('');
+      lines.push('Reminder: please confirm my headshot is attached before sending this email.');
+
+      var subject = 'Order: ' + type;
+      var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = href;
+    });
+
+    dmUpdateConditionals();
   }
 })();
 </script>
