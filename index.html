@@ -11,9 +11,10 @@
   <div class="container">
     <div class="brand">lpt <span>realty</span></div>
     <h1>Marketing Offerings</h1>
-    <p class="tagline">Browse every marketing product LPT offers. Click any item to email <a href="mailto:marketing@lpt.com">marketing@lpt.com</a> and place your order.</p>
+    <p class="tagline">Browse every marketing product LPT offers. Click any item to email <a href="mailto:marketing@lpt.com">marketing@lpt.com</a> and place your order. <strong>Any design here can also be mailed as a postcard</strong> via <a href="#powermail">Power Mail</a>.</p>
     <nav class="section-nav">
       <a href="#property">Property Marketing</a>
+      <a href="#powermail">Power Mail</a>
       <a href="#agent">Agent Marketing</a>
       <a href="#social">Social Media</a>
       <a href="#addons">Add-Ons</a>
@@ -177,6 +178,58 @@
         </div>
       </a>
     </div>
+  </section>
+
+  <!-- ============ POWER MAIL ============ -->
+  <section id="powermail" class="category">
+    <h2>Power Mail — Postcards to Nearby Homes</h2>
+    <p class="lead">Direct-mail postcards delivered to homes around your listing. <strong>Any design in this catalog</strong> — Just Listed, Open House, Custom, Waterfront, Ranch &amp; Land, magazines, prospecting flyers — can be ordered as a Power Mail postcard. Choose your quantity, targeting, and Smart ID options when you order.</p>
+
+    <h3>Order Power Mail</h3>
+    <div class="grid">
+      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Power%20Mail%20Postcards&body=I%20would%20like%20to%20order%20a%20Power%20Mail%20postcard%20campaign.%20Please%20contact%20me%20to%20get%20started.%0A%0AProperty%20Address%3A%20%0AAR%20Code%3A%20%0ADesign%20%2F%20Template%20(any%20catalog%20item)%3A%20%0AQuantity%20(100%20%2F%20250%20%2F%20500%20%2F%201%2C000%20%2F%202%2C500%20%2F%205%2C000)%3A%20%0ATargeting%20(Radius%20%2F%20ZIP%20%2F%20Custom%20list%20%2F%20Farm)%3A%20%0ASmart%20ID%20(Yes%2FNo)%3A%20">
+        <div class="card-thumb"><img src="images/Digital-Marketing.png" alt="Power Mail postcards"></div>
+        <div class="card-body">
+          <h4>Power Mail Postcards</h4>
+          <span class="price">Custom Quote</span>
+          <p>Mail any catalog design as a postcard to homes near your listing or in a target farm area. Printing, addressing, and postage handled for you.</p>
+          <div class="breakdown-title">Choose Any Design</div>
+          <ul class="breakdown">
+            <li>Just Listed / Just Sold</li>
+            <li>Open House (with date &amp; time)</li>
+            <li>Custom headline (Price Reduced, Waterfront, Ranch &amp; Land, etc.)</li>
+            <li>Marketing Plan, 9 Critical Questions, 7 Homebuyer Strategies</li>
+            <li>Prospecting / Farming postcards</li>
+          </ul>
+          <div class="breakdown-title">Quantity Options</div>
+          <ul class="breakdown">
+            <li><strong>100</strong> postcards</li>
+            <li><strong>250</strong> postcards</li>
+            <li><strong>500</strong> postcards</li>
+            <li><strong>1,000</strong> postcards</li>
+            <li><strong>2,500</strong> postcards</li>
+            <li><strong>5,000</strong> postcards</li>
+          </ul>
+          <div class="breakdown-title">Targeting Options</div>
+          <ul class="breakdown">
+            <li><strong>Radius</strong> — homes within a chosen distance of the listing</li>
+            <li><strong>ZIP Code</strong> — every door in one or more ZIPs</li>
+            <li><strong>Custom List</strong> — your own mailing list (CSV upload)</li>
+            <li><strong>Farm Area</strong> — targeted neighborhood / subdivision</li>
+            <li><strong>Demographics</strong> — filter by homeowner, income, or property type</li>
+          </ul>
+          <div class="breakdown-title">Smart ID Tracking <span class="tag">Optional</span></div>
+          <ul class="breakdown">
+            <li>Unique trackable code printed on each postcard</li>
+            <li>Capture leads who scan or call from the mailer</li>
+            <li>Auto SMS follow-up &amp; lead notifications</li>
+            <li>Pairs with the Lead Communication Platform add-on</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <p class="sub" style="margin-top:20px;"><strong>How to order:</strong> Click above (or any product card on this page) and let us know which design, quantity, targeting type, and whether you want Smart ID. Our marketing team will send a quote and proof before printing.</p>
   </section>
 
   <!-- ============ AGENT MARKETING ============ -->
@@ -509,11 +562,81 @@
 
 </main>
 
+<!-- ============ DETAIL MODAL ============ -->
+<div id="detailModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="document">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+    <div class="modal-body">
+      <h3 id="modalTitle"></h3>
+      <div id="modalContent"></div>
+      <a id="modalOrderBtn" class="btn modal-btn" href="#">Email to Order</a>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="container">
     <p>&copy; LPT Realty — Marketing Offerings. Order via <a href="mailto:marketing@lpt.com">marketing@lpt.com</a>.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var modal = document.getElementById('detailModal');
+  var modalImage = document.getElementById('modalImage');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalContent = document.getElementById('modalContent');
+  var orderBtn = document.getElementById('modalOrderBtn');
+
+  function openModal(card) {
+    var img = card.querySelector('.card-thumb img');
+    var titleEl = card.querySelector('h4');
+    var body = card.querySelector('.card-body');
+
+    modalImage.src = img ? img.src : '';
+    modalImage.alt = img ? img.alt : '';
+    modalTitle.innerHTML = titleEl ? titleEl.innerHTML : '';
+
+    modalContent.innerHTML = '';
+    if (body) {
+      Array.prototype.forEach.call(body.children, function (child) {
+        if (child.tagName === 'H4') return;
+        modalContent.appendChild(child.cloneNode(true));
+      });
+    }
+
+    orderBtn.href = card.getAttribute('href') || 'mailto:marketing@lpt.com';
+
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest('.card');
+    if (card && modal.contains(card) === false) {
+      e.preventDefault();
+      openModal(card);
+      return;
+    }
+    if (e.target.closest('[data-modal-close]')) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+</script>
 
 </body>
 </html>
