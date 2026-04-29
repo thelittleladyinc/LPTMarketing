@@ -187,12 +187,12 @@
 
     <h3>Order Power Mail</h3>
     <div class="grid">
-      <a class="card" href="mailto:marketing@lpt.com?subject=Order:%20Power%20Mail%20Postcards&body=I%20would%20like%20to%20order%20a%20Power%20Mail%20postcard%20campaign.%20Please%20contact%20me%20to%20get%20started.%0A%0AProperty%20Address%3A%20%0AAR%20Code%3A%20%0ADesign%20%2F%20Template%20(any%20catalog%20item)%3A%20%0AQuantity%20(100%20%2F%20250%20%2F%20500%20%2F%201%2C000%20%2F%202%2C500%20%2F%205%2C000)%3A%20%0ATargeting%20(Radius%20%2F%20ZIP%20%2F%20Custom%20list%20%2F%20Farm)%3A%20%0ASmart%20ID%20(Yes%2FNo)%3A%20">
+      <a class="card" href="#powermail-form" data-modal-target="powerMailFormModal">
         <div class="card-thumb"><img src="images/Digital-Marketing.png" alt="Power Mail postcards"></div>
         <div class="card-body">
-          <h4>Power Mail Postcards</h4>
-          <span class="price">Custom Quote</span>
-          <p>Mail any catalog design as a postcard to homes near your listing or in a target farm area. Printing, addressing, and postage handled for you.</p>
+          <h4>Power Mail Postcards <span class="tag tag-orange">Configure</span></h4>
+          <span class="price">From $127.50</span>
+          <p>Click to open the order form: choose quantity (150–1,000 nearest homes), filter by Renters/Owners and Length of Residence, add Smart ID tracking, and pick your template. Live pricing as you choose.</p>
           <div class="breakdown-title">Choose Any Design</div>
           <ul class="breakdown">
             <li>Just Listed / Just Sold</li>
@@ -576,6 +576,115 @@
   </div>
 </div>
 
+<!-- ============ POWER MAIL FORM MODAL ============ -->
+<div id="powerMailFormModal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog-form" role="document">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <div class="modal-image"><img src="images/Digital-Marketing.png" alt="Power Mail postcards"></div>
+    <div class="modal-body">
+      <h3 id="pmTitle">Power Mail — Configure Your Campaign</h3>
+      <p>Fill out the campaign details. We'll send a proof and a final quote before printing.</p>
+
+      <form id="powerMailForm" novalidate>
+        <div class="form-section-title">Listing Info</div>
+        <div class="form-row">
+          <label for="pm-address">Property Address</label>
+          <input id="pm-address" name="address" type="text" placeholder="123 Main St, City, State ZIP" required>
+        </div>
+        <div class="form-row">
+          <label for="pm-ar">AR Code</label>
+          <input id="pm-ar" name="arCode" type="text" placeholder="Your AR number">
+        </div>
+
+        <div class="form-section-title">Headline</div>
+        <div class="form-row">
+          <label for="pm-headline">Headline Type</label>
+          <select id="pm-headline" name="headlineType">
+            <option value="Just Listed">Just Listed</option>
+            <option value="Just Sold">Just Sold</option>
+            <option value="Open House">Open House</option>
+            <option value="Price Reduced">Price Reduced</option>
+            <option value="Custom" selected>Custom</option>
+          </select>
+        </div>
+        <div class="form-row" data-show-when="headlineType=Custom">
+          <label for="pm-customHeadline">Custom Headline <span class="char-count" data-counter-for="pm-customHeadline">0/20</span></label>
+          <input id="pm-customHeadline" name="customHeadline" type="text" maxlength="20" placeholder="e.g. Rocky Mountain Views">
+        </div>
+        <div class="form-row" data-show-when="headlineType=Custom">
+          <label for="pm-customTagline">Custom Tagline <span class="char-count" data-counter-for="pm-customTagline">0/90</span></label>
+          <input id="pm-customTagline" name="customTagline" type="text" maxlength="90" placeholder="e.g. Little Lady, BIG Marketing">
+        </div>
+
+        <div class="form-section-title">Targeting</div>
+        <div class="form-row">
+          <label for="pm-quantity">Nearest Homes (Quantity)</label>
+          <select id="pm-quantity" name="quantity" data-base>
+            <option value="1000" data-base="800.00">1,000 Homes — $800.00 ($0.80 each)</option>
+            <option value="750" data-base="607.50">750 Homes — $607.50 ($0.81 each)</option>
+            <option value="600" data-base="492.00">600 Homes — $492.00 ($0.82 each)</option>
+            <option value="500" data-base="410.00">500 Homes — $410.00 ($0.82 each)</option>
+            <option value="400" data-base="328.00">400 Homes — $328.00 ($0.82 each)</option>
+            <option value="300" data-base="249.00">300 Homes — $249.00 ($0.83 each)</option>
+            <option value="200" data-base="166.00">200 Homes — $166.00 ($0.83 each)</option>
+            <option value="150" data-base="127.50">150 Homes — $127.50 ($0.85 each)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="pm-renters">Renters / Owners</label>
+          <select id="pm-renters" name="rentersOwners" data-add>
+            <option value="All" data-add="0">All</option>
+            <option value="Only Owners" data-add="60">Only Owners — +$60.00 ($0.06 each)</option>
+            <option value="Only Renters" data-add="90">Only Renters — +$90.00 ($0.09 each)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="pm-residence">Length of Residence</label>
+          <select id="pm-residence" name="lengthOfResidence" data-add>
+            <option value="Any" data-add="0">Any</option>
+            <option value="Greater Than 1 Year" data-add="60">Greater Than 1 Year — +$60.00 ($0.06 each)</option>
+            <option value="Greater Than 2 Years" data-add="70">Greater Than 2 Years — +$70.00 ($0.07 each)</option>
+            <option value="Greater Than 5 Years" data-add="90">Greater Than 5 Years — +$90.00 ($0.09 each)</option>
+          </select>
+        </div>
+
+        <div class="form-section-title">Add-Ons</div>
+        <div class="form-row checkbox-row">
+          <label><input type="checkbox" name="smartId" value="Yes" data-add="20"> <strong>Smart ID — $20.00</strong></label>
+          <p class="form-hint">Track responses by household, unique property code on each postcard, downloadable mailing list with phone numbers when available.</p>
+        </div>
+        <div class="form-row checkbox-row">
+          <label><input type="checkbox" name="mailToYourself" value="Yes" data-add="1"> <strong>Mail to Yourself — $1.00</strong></label>
+          <p class="form-hint">Include your shipping address in the mail route so you receive a copy.</p>
+        </div>
+        <div class="form-row checkbox-row">
+          <label><input type="checkbox" name="leadComm" value="Yes" data-add="5"> <strong>Lead Communication Platform — $5.00</strong></label>
+          <p class="form-hint">Power Connect, Auto SMS Text Messaging, and Follow-Up.</p>
+        </div>
+
+        <div class="form-section-title">Template</div>
+        <div class="form-row radio-row">
+          <label><input type="radio" name="template" value="Standard" checked> <strong>Standard</strong>
+            <span class="form-hint">Includes team logo (if applicable) with your AR number as the largest contact. Broker phone/address shown in disclaimer.</span>
+          </label>
+          <label><input type="radio" name="template" value="State Compliant"> <strong>State Compliant</strong>
+            <span class="form-hint">Use this if your state requires the Broker contact to be the largest contact. Office number will be the largest phone.</span>
+          </label>
+        </div>
+
+        <div class="form-total">
+          <span>Estimated Total</span>
+          <span id="powerMailTotal">$800.00</span>
+        </div>
+
+        <button type="submit" class="modal-btn">Submit Order via Email</button>
+        <p class="form-hint" style="text-align:center;margin-top:10px;">This opens your email app with the order details prefilled.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="container">
     <p>&copy; LPT Realty — Marketing Offerings. Order via <a href="mailto:marketing@lpt.com">marketing@lpt.com</a>.</p>
@@ -584,13 +693,13 @@
 
 <script>
 (function () {
-  var modal = document.getElementById('detailModal');
+  var detailModal = document.getElementById('detailModal');
   var modalImage = document.getElementById('modalImage');
   var modalTitle = document.getElementById('modalTitle');
   var modalContent = document.getElementById('modalContent');
   var orderBtn = document.getElementById('modalOrderBtn');
 
-  function openModal(card) {
+  function openDetailModal(card) {
     var img = card.querySelector('.card-thumb img');
     var titleEl = card.querySelector('h4');
     var body = card.querySelector('.card-body');
@@ -608,33 +717,136 @@
     }
 
     orderBtn.href = card.getAttribute('href') || 'mailto:marketing@lpt.com';
+    showModal(detailModal);
+  }
 
-    modal.hidden = false;
-    modal.setAttribute('aria-hidden', 'false');
+  function showModal(modalEl) {
+    modalEl.hidden = false;
+    modalEl.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
   }
 
-  function closeModal() {
-    modal.hidden = true;
-    modal.setAttribute('aria-hidden', 'true');
+  function closeAllModals() {
+    document.querySelectorAll('.modal').forEach(function (m) {
+      m.hidden = true;
+      m.setAttribute('aria-hidden', 'true');
+    });
     document.body.classList.remove('modal-open');
   }
 
   document.addEventListener('click', function (e) {
-    var card = e.target.closest('.card');
-    if (card && modal.contains(card) === false) {
-      e.preventDefault();
-      openModal(card);
+    if (e.target.closest('[data-modal-close]')) {
+      closeAllModals();
       return;
     }
-    if (e.target.closest('[data-modal-close]')) {
-      closeModal();
+    var card = e.target.closest('.card');
+    if (card && card.closest('.modal') === null) {
+      e.preventDefault();
+      var targetId = card.getAttribute('data-modal-target');
+      if (targetId) {
+        var target = document.getElementById(targetId);
+        if (target) showModal(target);
+      } else {
+        openDetailModal(card);
+      }
     }
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
+    if (e.key === 'Escape') {
+      var anyOpen = document.querySelector('.modal:not([hidden])');
+      if (anyOpen) closeAllModals();
+    }
   });
+
+  // ===== Power Mail form: live total, conditional fields, char counters, submit =====
+  var pmForm = document.getElementById('powerMailForm');
+  if (pmForm) {
+    var totalEl = document.getElementById('powerMailTotal');
+
+    function recalcTotal() {
+      var total = 0;
+      pmForm.querySelectorAll('select[data-base] option:checked').forEach(function (opt) {
+        total += parseFloat(opt.dataset.base) || 0;
+      });
+      pmForm.querySelectorAll('select[data-add] option:checked').forEach(function (opt) {
+        total += parseFloat(opt.dataset.add) || 0;
+      });
+      pmForm.querySelectorAll('input[type="checkbox"][data-add]').forEach(function (cb) {
+        if (cb.checked) total += parseFloat(cb.dataset.add) || 0;
+      });
+      totalEl.textContent = '$' + total.toFixed(2);
+    }
+
+    function updateConditionalRows() {
+      var headlineType = pmForm.querySelector('[name="headlineType"]').value;
+      pmForm.querySelectorAll('[data-show-when]').forEach(function (row) {
+        var cond = row.getAttribute('data-show-when').split('=');
+        var show = pmForm.querySelector('[name="' + cond[0] + '"]').value === cond[1];
+        row.style.display = show ? '' : 'none';
+      });
+    }
+
+    function updateCounters() {
+      pmForm.querySelectorAll('[data-counter-for]').forEach(function (counter) {
+        var input = document.getElementById(counter.getAttribute('data-counter-for'));
+        if (input) {
+          counter.textContent = input.value.length + '/' + input.maxLength;
+        }
+      });
+    }
+
+    pmForm.addEventListener('input', function () {
+      recalcTotal();
+      updateConditionalRows();
+      updateCounters();
+    });
+    pmForm.addEventListener('change', recalcTotal);
+
+    pmForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var d = new FormData(pmForm);
+      var headline = d.get('headlineType');
+      var lines = [];
+      lines.push('I would like to order a Power Mail postcard campaign with the configuration below.');
+      lines.push('');
+      lines.push('=== LISTING INFO ===');
+      lines.push('Property Address: ' + (d.get('address') || ''));
+      lines.push('AR Code: ' + (d.get('arCode') || ''));
+      lines.push('');
+      lines.push('=== HEADLINE ===');
+      lines.push('Type: ' + headline);
+      if (headline === 'Custom') {
+        lines.push('Custom Headline: ' + (d.get('customHeadline') || ''));
+        lines.push('Custom Tagline: ' + (d.get('customTagline') || ''));
+      }
+      lines.push('');
+      lines.push('=== TARGETING ===');
+      lines.push('Quantity: ' + pmForm.querySelector('[name="quantity"]').selectedOptions[0].textContent);
+      lines.push('Renters/Owners: ' + pmForm.querySelector('[name="rentersOwners"]').selectedOptions[0].textContent);
+      lines.push('Length of Residence: ' + pmForm.querySelector('[name="lengthOfResidence"]').selectedOptions[0].textContent);
+      lines.push('');
+      lines.push('=== ADD-ONS ===');
+      lines.push('Smart ID: ' + (d.get('smartId') ? 'Yes (+$20.00)' : 'No'));
+      lines.push('Mail to Yourself: ' + (d.get('mailToYourself') ? 'Yes (+$1.00)' : 'No'));
+      lines.push('Lead Communication Platform: ' + (d.get('leadComm') ? 'Yes (+$5.00)' : 'No'));
+      lines.push('');
+      lines.push('=== TEMPLATE ===');
+      lines.push(d.get('template'));
+      lines.push('');
+      lines.push('=== ESTIMATED TOTAL ===');
+      lines.push(totalEl.textContent);
+
+      var subject = 'Order: Power Mail Postcard Campaign';
+      var href = 'mailto:marketing@lpt.com?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = href;
+    });
+
+    recalcTotal();
+    updateConditionalRows();
+    updateCounters();
+  }
 })();
 </script>
 
