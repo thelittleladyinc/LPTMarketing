@@ -28,6 +28,20 @@ body {
   padding: 0 24px;
 }
 
+/* ===== DISCLAIMER BANNER ===== */
+.disclaimer-banner {
+  background: #fff4d6;
+  border-bottom: 2px solid #f0c75e;
+  color: #6a4b00;
+  font-size: 14px;
+  padding: 10px 0;
+  text-align: center;
+  line-height: 1.45;
+}
+.disclaimer-banner strong {
+  color: #5a3a00;
+}
+
 /* ===== HERO ===== */
 .hero {
   background: linear-gradient(135deg, var(--lpt-navy) 0%, var(--lpt-navy-dark) 100%);
